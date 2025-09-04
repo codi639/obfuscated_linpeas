@@ -1,5 +1,5 @@
 # obfuscated_linpeas
-Just a quick setup to bypass most AV with LinPEAS
+Just a quick setup to bypass most AV with PEAS scripts.
 ___
 Run:
 ```bash
