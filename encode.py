@@ -1,4 +1,4 @@
-# encode_linpeas.py
+# encode.py
 import base64
 import random
 import string
@@ -7,12 +7,15 @@ import sys
 def xor(data, key):
     return bytes([b ^ key[i % len(key)] for i, b in enumerate(data)])
 
+def generate_key(length=8):
+    return ''.join(random.choices(string.ascii_letters + string.digits, k=length)).encode()
+
 def main():
     if len(sys.argv) != 2:
-        print("Usage: python encode_linpeas.py linpeas.sh > output.txt")
+        print("Usage: python encode.py <input_file> > encoded.txt")
         return
 
-    key = ''.join(random.choices(string.ascii_letters + string.digits, k=8)).encode()
+    key = generate_key()
     with open(sys.argv[1], 'rb') as f:
         original = f.read()
 
